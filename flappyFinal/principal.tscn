@@ -6,22 +6,6 @@
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_c0khh"]
 
-[sub_resource type="Animation" id="Animation_gh2l4"]
-resource_name = "reposo"
-length = 0.1
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [0]
-}
-
 [sub_resource type="Animation" id="Animation_gelln"]
 length = 0.001
 tracks/0/type = "value"
@@ -53,6 +37,22 @@ tracks/0/keys = {
 "values": [0, 2, 3]
 }
 
+[sub_resource type="Animation" id="Animation_gh2l4"]
+resource_name = "reposo"
+length = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_po4tq"]
 _data = {
 "RESET": SubResource("Animation_gelln"),
@@ -80,14 +80,43 @@ libraries = {
 [node name="Camera2D" type="Camera2D" parent="jugador"]
 ignore_rotation = false
 zoom = Vector2(1.7, 1.7)
+limit_top = -126
+limit_bottom = 0
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+scroll_ignore_camera_zoom = true
 
 [node name="Background" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_mirroring = Vector2(190, 0)
 
 [node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/Background"]
-position = Vector2(-0.999998, 0.500004)
-scale = Vector2(1.10156, 1.48047)
+position = Vector2(357.512, 41.2)
+scale = Vector2(1.408, 1.9)
+texture = ExtResource("3_50oq0")
+
+[node name="Sprite2D3" type="Sprite2D" parent="ParallaxBackground/Background"]
+position = Vector2(2556.51, 41.2)
+scale = Vector2(1.408, 1.9)
+texture = ExtResource("3_50oq0")
+
+[node name="Sprite2D2" type="Sprite2D" parent="ParallaxBackground/Background"]
+position = Vector2(-192.776, 41.2)
+scale = Vector2(1.408, 1.9)
+texture = ExtResource("3_50oq0")
+
+[node name="Sprite2D7" type="Sprite2D" parent="ParallaxBackground/Background"]
+position = Vector2(1456.51, 41.2)
+scale = Vector2(1.408, 1.9)
+texture = ExtResource("3_50oq0")
+
+[node name="Sprite2D8" type="Sprite2D" parent="ParallaxBackground/Background"]
+position = Vector2(2006.51, 41.2)
+scale = Vector2(1.408, 1.9)
+texture = ExtResource("3_50oq0")
+
+[node name="Sprite2D4" type="Sprite2D" parent="ParallaxBackground/Background"]
+position = Vector2(907.512, 41.2)
+scale = Vector2(1.408, 1.9)
 texture = ExtResource("3_50oq0")
 
 [node name="suelo" type="ParallaxLayer" parent="ParallaxBackground"]
